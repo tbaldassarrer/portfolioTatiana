@@ -11,12 +11,19 @@ const navItems = [
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState('inicio');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToHome = (event) => {
     event.preventDefault();
     setActiveSection('inicio');
+    setIsMenuOpen(false);
     window.history.pushState(null, '', window.location.pathname + window.location.search);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavClick = (item) => {
+    setActiveSection(item.id);
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
@@ -56,13 +63,47 @@ export default function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const closeMenuOnDesktop = () => {
+      if (window.innerWidth > 680) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', closeMenu);
+    window.addEventListener('resize', closeMenuOnDesktop);
+
+    return () => {
+      window.removeEventListener('keydown', closeMenu);
+      window.removeEventListener('resize', closeMenuOnDesktop);
+    };
+  }, []);
+
   return (
     <header className="site-header">
       <nav className="nav container" aria-label="Navegación principal">
         <a className="brand" href="#inicio" aria-label="Ir al inicio" onClick={scrollToHome}>
           Tatiana Baldassarre
         </a>
-        <div className="nav-links">
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="nav-links"
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div className={isMenuOpen ? 'nav-links open' : 'nav-links'} id="nav-links">
           {navItems.map((item) => {
             const isHome = item.id === 'inicio';
 
@@ -71,7 +112,7 @@ export default function Header() {
                 className={activeSection === item.id ? 'active' : ''}
                 key={item.href}
                 href={item.href}
-                onClick={isHome ? scrollToHome : () => setActiveSection(item.id)}
+                onClick={isHome ? scrollToHome : () => handleNavClick(item)}
               >
                 {item.label}
               </a>
