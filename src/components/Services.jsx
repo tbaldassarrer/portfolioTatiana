@@ -39,9 +39,15 @@ export default function Services() {
     <section id="servicios" className="section services-section">
       <BotanicalDecor className="botanical-services-right" variant="bloom" />
       <div className="container">
-        <div className="section-heading services-heading">
-          <p className="eyebrow">Servicios</p>
-          <h2>Soluciones web claras, cuidadas y adaptadas a cada proyecto</h2>
+        <div className="section-heading split-heading services-heading">
+          <div>
+            <p className="eyebrow">Servicios</p>
+            <h2>Soluciones web claras, cuidadas y adaptadas a cada proyecto</h2>
+          </div>
+          <p>
+            Desarrollo interfaces modernas, responsive y fáciles de mantener para proyectos personales,
+            profesionales y negocios que necesitan una presencia digital cuidada.
+          </p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
