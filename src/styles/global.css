@@ -13,7 +13,9 @@
   --border: #e8dde5;
   --shadow: 0 22px 70px rgba(74, 69, 72, 0.08);
   --radius: 14px;
-  --max-width: 1160px;
+  --max-width: 1480px;
+  --page-gutter: clamp(40px, 7vw, 136px);
+  --content-offset: max(calc(var(--page-gutter) / 2), calc((100vw - var(--max-width)) / 2));
 }
 
 * {
@@ -88,7 +90,7 @@ p {
 }
 
 .container {
-  width: min(100% - 40px, var(--max-width));
+  width: min(calc(100% - var(--page-gutter)), var(--max-width));
   margin: 0 auto;
 }
 
@@ -293,8 +295,8 @@ p {
   position: relative;
   z-index: 2;
   max-width: 620px;
-  margin-left: 10%;
-  padding-left: 34px;
+  margin-left: var(--content-offset);
+  padding-left: 0;
 }
 
 .hero-content::before {
