@@ -45,7 +45,7 @@ export default function ScrollToTop() {
       aria-label="Volver arriba"
       onClick={scrollToTop}
     >
-      Volver arriba
+      <span aria-hidden="true">↑</span>
     </button>
   );
 }

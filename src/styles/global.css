@@ -866,10 +866,14 @@ p {
   right: 30px;
   bottom: 28px;
   z-index: 18;
-  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(216, 184, 200, 0.72);
-  border-radius: 999px;
-  padding: 11px 20px;
+  border-radius: 50%;
+  padding: 0;
   color: var(--accent-dark);
   background: rgba(255, 253, 254, 0.86);
   box-shadow: 0 18px 48px rgba(74, 69, 72, 0.12);
@@ -885,6 +889,14 @@ p {
     transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease;
+}
+
+.scroll-to-top span {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 .scroll-to-top.visible {
@@ -1145,8 +1157,7 @@ p {
   .scroll-to-top {
     right: 14px;
     bottom: 14px;
-    min-height: 40px;
-    padding: 9px 15px;
-    font-size: 0.9rem;
+    width: 40px;
+    height: 40px;
   }
 }
