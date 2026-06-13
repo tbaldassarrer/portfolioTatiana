@@ -1177,6 +1177,17 @@ p {
   .image-frame {
     height: 230px;
     min-height: 230px;
+    background: var(--bg-soft);
+  }
+
+  .image-frame img {
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .project-card:hover .image-frame img,
+  .demo-card:hover .image-frame img {
+    transform: none;
   }
 
   .image-frame-small {
