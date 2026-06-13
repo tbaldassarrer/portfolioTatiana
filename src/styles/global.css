@@ -889,6 +889,10 @@ p {
 }
 
 @media (max-width: 680px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .container {
     width: min(100% - 28px, var(--max-width));
   }
@@ -898,7 +902,16 @@ p {
   }
 
   h1 {
-    font-size: clamp(2.45rem, 14vw, 4rem);
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: clamp(2.35rem, 11vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+  }
+
+  h1 em {
+    font-size: 0.96em;
+    letter-spacing: -0.025em;
   }
 
   h2 {
@@ -919,8 +932,12 @@ p {
   }
 
   .hero {
-    min-height: 680px;
-    background-position: center;
+    min-height: calc(100svh - 178px);
+    aspect-ratio: auto;
+    align-items: flex-start;
+    padding: 72px 0 56px;
+    background-size: cover;
+    background-position: 34% center;
   }
 
   .botanical-services-right,
@@ -956,6 +973,10 @@ p {
   .btn,
   .text-link {
     width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    white-space: normal;
+    text-align: center;
   }
 
   .text-link {
@@ -990,9 +1011,17 @@ p {
   }
 
   .hero-content {
-    max-width: calc(100% - 28px);
-    margin-left: 14px;
-    padding-left: 22px;
+    width: min(100% - 44px, 360px);
+    max-width: none;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    margin-bottom: 26px;
+    font-size: 0.96rem;
+    line-height: 1.55;
   }
 
   .lightbox {
