@@ -12,6 +12,13 @@ const navItems = [
 export default function Header() {
   const [activeSection, setActiveSection] = useState('inicio');
 
+  const scrollToHome = (event) => {
+    event.preventDefault();
+    setActiveSection('inicio');
+    window.history.pushState(null, '', window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     let ticking = false;
 
@@ -52,20 +59,24 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="nav container" aria-label="Navegación principal">
-        <a className="brand" href="#inicio" aria-label="Ir al inicio" onClick={() => setActiveSection('inicio')}>
+        <a className="brand" href="#inicio" aria-label="Ir al inicio" onClick={scrollToHome}>
           Tatiana Baldassarre
         </a>
         <div className="nav-links">
-          {navItems.map((item) => (
-            <a
-              className={activeSection === item.id ? 'active' : ''}
-              key={item.href}
-              href={item.href}
-              onClick={() => setActiveSection(item.id)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isHome = item.id === 'inicio';
+
+            return (
+              <a
+                className={activeSection === item.id ? 'active' : ''}
+                key={item.href}
+                href={item.href}
+                onClick={isHome ? scrollToHome : () => setActiveSection(item.id)}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </div>
       </nav>
     </header>
