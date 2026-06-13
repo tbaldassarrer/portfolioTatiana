@@ -994,7 +994,7 @@ p {
     min-height: 720px;
     aspect-ratio: auto;
     align-items: flex-start;
-    padding: clamp(255px, 72vw, 310px) 0 44px;
+    padding: clamp(280px, 78vw, 340px) 0 44px;
     background-image: url("../assets/fondos/heroMoviles.png");
     background-size: auto 100%;
     background-position: center top;
