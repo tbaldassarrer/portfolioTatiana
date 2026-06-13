@@ -5,20 +5,20 @@ import gBaldassarreImage from '../assets/projects/gBaldassarre.png';
 
 export const projects = [
   {
-    title: 'Sparkling Tech',
-    image: sparklingImage,
-    description:
-      'Sitio web profesional con una interfaz cuidada, clara y orientada a presentar servicios tecnológicos.',
-    technologies: ['React', 'JavaScript', 'CSS'],
-    projectUrl: 'https://sparklingtech.es/',
-  },
-  {
     title: 'Libria',
     image: libriaImage,
     description:
       'Aplicación web para organizar lecturas, mejorar la experiencia de búsqueda y gestionar contenido personal.',
     technologies: ['Java', 'Spring Boot', 'MySQL', 'CSS'],
     projectUrl: 'https://tbaldassarrer.github.io/libria-final/',
+  },
+  {
+    title: 'Portfolio artístico GBaldassarre',
+    image: gBaldassarreImage,
+    description:
+      'Portfolio visual para mostrar obra artística con una navegación sencilla y una estética elegante.',
+    technologies: ['React', 'JavaScript', 'CSS'],
+    projectUrl: 'https://www.gbaldassarre.com/',
   },
   {
     title: 'La Peonía',
@@ -29,11 +29,11 @@ export const projects = [
     projectUrl: 'https://tbaldassarrer.github.io/la-peonia-frontend/',
   },
   {
-    title: 'Portfolio artístico GBaldassarre',
-    image: gBaldassarreImage,
+    title: 'Sparkling Tech',
+    image: sparklingImage,
     description:
-      'Portfolio visual para mostrar obra artística con una navegación sencilla y una estética elegante.',
+      'Sitio web profesional con una interfaz cuidada, clara y orientada a presentar servicios tecnológicos.',
     technologies: ['React', 'JavaScript', 'CSS'],
-    projectUrl: 'https://www.gbaldassarre.com/',
+    projectUrl: 'https://sparklingtech.es/',
   },
 ];
