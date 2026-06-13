@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import BotanicalDecor from './BotanicalDecor.jsx';
 
 const services = [
@@ -28,6 +29,12 @@ const services = [
 ];
 
 export default function Services() {
+  const [openService, setOpenService] = useState(null);
+
+  const toggleService = (index) => {
+    setOpenService((current) => (current === index ? null : index));
+  };
+
   return (
     <section id="servicios" className="section services-section">
       <BotanicalDecor className="botanical-services-right" variant="bloom" />
@@ -38,10 +45,17 @@ export default function Services() {
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
-            <article className="service-card" key={service.title}>
-              <span className="service-number">{String(index + 1).padStart(2, '0')}</span>
-              <span className="service-icon" aria-hidden="true" />
-              <h3>{service.title}</h3>
+            <article className={openService === index ? 'service-card open' : 'service-card'} key={service.title}>
+              <button
+                className="service-summary"
+                type="button"
+                aria-expanded={openService === index}
+                onClick={() => toggleService(index)}
+              >
+                <span className="service-number">{String(index + 1).padStart(2, '0')}</span>
+                <span className="service-icon" aria-hidden="true" />
+                <h3>{service.title}</h3>
+              </button>
               <p>{service.description}</p>
             </article>
           ))}
