@@ -363,7 +363,9 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(180deg, var(--surface), #ffffff 58%, var(--bg-soft));
+    linear-gradient(180deg, rgba(255, 253, 254, 0.38), rgba(255, 255, 255, 0.72) 52%, var(--bg-soft)),
+    url("../assets/fondos/fondoServicios.png") center top / cover no-repeat,
+    var(--bg-soft);
   border-top: 1px solid var(--border);
 }
 
@@ -911,6 +913,13 @@ p {
     padding: 84px 0;
   }
 
+  .services-section {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 254, 0.42), rgba(255, 255, 255, 0.78) 48%, var(--bg-soft)),
+      url("../assets/fondos/fondoServicios.png") center top / auto 360px no-repeat,
+      var(--bg-soft);
+  }
+
   .nav {
     align-items: flex-start;
     flex-direction: column;
@@ -964,6 +973,13 @@ p {
 @media (max-width: 680px) {
   body {
     overflow-x: hidden;
+  }
+
+  .services-section {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 254, 0.5), rgba(255, 255, 255, 0.86) 42%, var(--bg-soft)),
+      url("../assets/fondos/fondoServicios.png") center top / auto 260px no-repeat,
+      var(--bg-soft);
   }
 
   .container {
