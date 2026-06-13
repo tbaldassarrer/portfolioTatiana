@@ -932,7 +932,7 @@ p {
   h1 {
     max-width: 100%;
     margin-bottom: 18px;
-    font-size: clamp(2.35rem, 11vw, 3rem);
+    font-size: clamp(2.15rem, 10vw, 2.65rem);
     line-height: 1.06;
     letter-spacing: -0.025em;
   }
@@ -991,13 +991,13 @@ p {
   }
 
   .hero {
-    min-height: calc(100svh - 178px);
+    min-height: 720px;
     aspect-ratio: auto;
     align-items: flex-start;
-    padding: 72px 0 56px;
+    padding: clamp(255px, 72vw, 310px) 0 44px;
     background-image: url("../assets/fondos/heroMoviles.png");
-    background-size: cover;
-    background-position: center center;
+    background-size: auto 100%;
+    background-position: center top;
   }
 
   .botanical-services-right,
@@ -1079,8 +1079,8 @@ p {
 
   .hero-subtitle {
     max-width: 100%;
-    margin-bottom: 26px;
-    font-size: 0.96rem;
+    margin-bottom: 24px;
+    font-size: 0.92rem;
     line-height: 1.55;
   }
 
