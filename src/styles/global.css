@@ -854,6 +854,7 @@ p {
 .footer {
   border-top: 1px solid var(--border);
   background: var(--surface);
+  font-size: 0.82rem;
 }
 
 .footer-inner {
@@ -866,6 +867,7 @@ p {
 
 .footer p {
   margin: 0;
+  line-height: 1.45;
 }
 
 .footer a {
