@@ -995,8 +995,9 @@ p {
     aspect-ratio: auto;
     align-items: flex-start;
     padding: 72px 0 56px;
+    background-image: url("../assets/fondos/heroMoviles.png");
     background-size: cover;
-    background-position: 34% center;
+    background-position: center center;
   }
 
   .botanical-services-right,
