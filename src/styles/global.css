@@ -958,6 +958,51 @@ p {
   }
 }
 
+@media (min-width: 681px) and (max-width: 980px) {
+  .hero {
+    min-height: 430px;
+    aspect-ratio: auto;
+    padding: 54px 0 44px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .hero-content {
+    width: min(48vw, 440px);
+    max-width: none;
+    margin-left: var(--content-offset);
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: clamp(2.05rem, 4.5vw, 3rem);
+    line-height: 1.04;
+    letter-spacing: -0.026em;
+  }
+
+  .hero h1 em {
+    letter-spacing: -0.03em;
+  }
+
+  .hero-subtitle {
+    max-width: 400px;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    min-height: 42px;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 680px) {
   body {
     overflow-x: hidden;
